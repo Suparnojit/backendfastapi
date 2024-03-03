@@ -18,7 +18,7 @@ async def upload_video(video: UploadFile = File(...)):
         return {"filename": filename}
     except Exception as e:
         return {"error": str(e)}
-    subprocess.call(["python", "dehaze.py", f"uploads/{filename}"])
+    subprocess.call(["python", "videoDehaze.py", f"uploads/{filename}"])
     
 @app.get("/download-video")
 async def download_video():
